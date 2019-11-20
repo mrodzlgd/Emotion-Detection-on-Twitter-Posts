@@ -3,7 +3,7 @@ by Melissa Rodriguez
 
 ### Goal:
 
-Create a Machine Learning Classification Model able to classify emotions from Twitter Posts. Ideally, an emotion detection model can help understand the emotional state of users and help identify and trends that could require attention from healthcare providers, and/or close acquaintances.
+Create a Machine Learning Classification Model able to classify emotions from Twitter Posts. Ideally, an emotion detection model can help understand the emotional state of users and help identify trends that could require attention from healthcare providers, and/or close acquaintances.
 
 #### Emotion detection on social media can be used to:
 
@@ -22,7 +22,7 @@ Create a Machine Learning Classification Model able to classify emotions from Tw
     - 02-Merging_Data.ipynb
     - 03-Data_Analysis_and_Pre-processing.ipynb
     - 04-Classification_with_Keras.ipynb
-    - connect_and_creat.py
+    - connect_and_create.py
     - extract_twitter_data.py
     - metrics_and_evaluation.py
     - preprocessing.py
