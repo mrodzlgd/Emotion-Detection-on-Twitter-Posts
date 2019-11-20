@@ -18,14 +18,14 @@ Create a Machine Learning Classification Model able to classify emotions from Tw
 
 
 - __Folder__: Jupyter_Notebooks_and_Scripts
-- 01-Twitter_Extract.ipynb
-- 02-Merging_Data.ipynb
-- 03-Data_Analysis_and_Pre-processing.ipynb
-- 04-Classification_with_Keras.ipynb
-- connect_and_creat.py
-- extract_twitter_data.py
-- metrics_and_evaluation.py
-- preprocessing.py
+    - 01-Twitter_Extract.ipynb
+    - 02-Merging_Data.ipynb
+    - 03-Data_Analysis_and_Pre-processing.ipynb
+    - 04-Classification_with_Keras.ipynb
+    - connect_and_creat.py
+    - extract_twitter_data.py
+    - metrics_and_evaluation.py
+    - preprocessing.py
         
 __References:__
 
