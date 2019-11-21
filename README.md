@@ -50,7 +50,7 @@ Text length ranges from 13 to 345 characters.
 
   Distribution:
 
-  ![Length of Twitter Posts](./images/Tweets_Length.png "Length of Twitter Posts Text")
+  ![Length of Twitter Posts](./images/Tweets_Text_Length.png "Length of Twitter Posts Text")
 
   Text examples:
 
@@ -86,9 +86,14 @@ The following steps were performed to the texts from Twitter Posts:
 - Set to lowercase
 - Lemmatization
 
+__Sub setting by Text Length__
+
+Will subset the data to only those posts where text length is more than 25 characters
 
 
+__Undersampling__
 
+Since Fear label is the smallest with about 65k records, selected 80k random records for the other three labels.
 
 __Train and Test Model__
 
