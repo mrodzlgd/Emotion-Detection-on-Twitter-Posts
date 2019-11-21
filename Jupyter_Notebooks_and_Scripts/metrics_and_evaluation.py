@@ -4,6 +4,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from keras import backend as K
 
+
+def zero_rule_algorithm_classification(train, test):
+    output_values = [row[-1] for row in train]
+    prediction = max(set(output_values), key=output_values.count)
+    predicted = [prediction for i in range(len(train))]
+    return predicted
+
+
 def recall_m(y_true, y_pred):
     true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
     possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
@@ -27,7 +35,7 @@ def f1_m(y_true, y_pred):
 def assign_pred(df,label):
   df = df.assign(pred=np.where(df[label] >.5, label, df['pred']))
   return df
-  
+
 
 def plot_cm(cm,classes):
   fig, ax = plt.subplots()
