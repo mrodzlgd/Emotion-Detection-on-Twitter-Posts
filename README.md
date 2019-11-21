@@ -21,30 +21,47 @@ Create a Machine Learning Classification Model able to classify emotions from Tw
 
 ## Process:
 
-#### Dataset:
+### Dataset
+
+![Length of Twitter Posts](./images/dataflow.png)
+
+
+
 
 - Data was downloaded from: http://knoesis.org/projects/emotion
 - Dataset contains tweet id and emotion label
 - Tweet texts needs to be downloaded by using the tweet id. - See notebook: 01-Twitter_Extract.ipynb
-- 1339794 records were extracted from Twitter using Tweepy.
+- __1339794__ records were extracted from Twitter using Tweepy.
     -  For more details about tweepy refer to: https://tweepy.readthedocs.io/en/latest/
-- All data was merged and loaded into an SQLite Database. - See Notebook: 02-Merging_Data.ipynb
+- After noticing that not all records were saved in a csv file, decided to save all merged data into an SQLite Database. - See Notebook: 02-Merging_Data.ipynb
 
-#### Exploratory Data Analysis
 
+### Exploratory Data Analysis
+
+__Counts per emotion classes:__
+
+Classes are unbalanced.
+
+![Emotion Counts](./images/Tweets_Emotion.png "Counts by Class")
+
+__Reviewing text length:__
+
+  Distribution:
 
 ![Length of Twitter Posts](./images/Tweets_Length.png "Lenght of Twitter Posts Text")
 
-![Long Text](./images/text_lenght_example_long.PNG "Long Text")
+  Text examples:
+
+  These posts might not have any characters or be useful after preprocessing.
 
 ![Short Text](./images/text_lenght_example.PNG "Short Text")
 
-![Emotion Counts](./images/Tweets_Emotion.png "Counts by Class")
+![Long Text](./images/text_lenght_example_long.PNG "Long Text")
 
 
 #### Preprocessing data
 
-The following steps were perfomed to the texts from Twitter Posts:
+The following steps were performed to the texts from Twitter Posts:
 
 - Removed usernames
 - Removed hashtags (they were used for classification process, this will avoid leakage)
