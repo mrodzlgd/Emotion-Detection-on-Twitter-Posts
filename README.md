@@ -18,7 +18,7 @@ Create a Machine Learning Classification Model able to classify emotions from Tw
     - extract_twitter_data.py
     - metrics_and_evaluation.py
     - preprocessing.py
-    
+
 ## Process:
 
 #### Dataset:
@@ -26,15 +26,20 @@ Create a Machine Learning Classification Model able to classify emotions from Tw
 - Data was downloaded from: http://knoesis.org/projects/emotion
 - Dataset contains tweet id and emotion label
 - Tweet texts needs to be downloaded by using the tweet id. - See notebook: 01-Twitter_Extract.ipynb
-- 1339794 records were extracted from Twitter using Tweepy. -  For more details about tweeoy refer to: https://tweepy.readthedocs.io/en/latest/
+- 1339794 records were extracted from Twitter using Tweepy.
+    -  For more details about tweepy refer to: https://tweepy.readthedocs.io/en/latest/
 - All data was merged and loaded into an SQLite Database. - See Notebook: 02-Merging_Data.ipynb
 
-#### Exploratory Data Analyisis
+#### Exploratory Data Analysis
 
 
-![Lenght of Twitter Posts](./images/Tweets_Length.png "Lenght of Twitter Posts Text")
+![Length of Twitter Posts](./images/Tweets_Length.png "Lenght of Twitter Posts Text")
 
+![Long Text](./images/text_lenght_example_long.PNG "Long Text")
 
+![Short Text](./images/text_lenght_example.PNG "Short Text")
+
+![Emotion Counts](./images/Tweets_Emotion.png "Counts by Class")
 
 
 #### Preprocessing data
@@ -58,7 +63,7 @@ The following steps were perfomed to the texts from Twitter Posts:
 __Train and Test Model__
 
 
-        
+
 __References:__
 
 http://knoesis.org/sites/default/files/wenbo_socialcom_2012_0.pdf
