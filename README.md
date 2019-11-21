@@ -46,9 +46,11 @@ Classes are unbalanced.
 
 __Reviewing text length:__
 
+Text length ranges from 13 to 345 characters.
+
   Distribution:
 
-![Length of Twitter Posts](./images/Tweets_Length.png "Lenght of Twitter Posts Text")
+  ![Length of Twitter Posts](./images/Tweets_Length.png "Length of Twitter Posts Text")
 
   Text examples:
 
@@ -60,6 +62,13 @@ __Reviewing text length:__
 
 
 #### Preprocessing data
+
+Since my interest is to work with the emotions that could show issues like depression, I decided to subset the data for the following classes:
+
+ - Fear
+ - Sadness
+ - Anger
+ - Joy
 
 The following steps were performed to the texts from Twitter Posts:
 
@@ -76,6 +85,10 @@ The following steps were performed to the texts from Twitter Posts:
 - Removed punctuation
 - Set to lowercase
 - Lemmatization
+
+
+
+
 
 __Train and Test Model__
 
