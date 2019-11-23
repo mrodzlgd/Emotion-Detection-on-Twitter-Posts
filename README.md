@@ -37,7 +37,7 @@ __jupyter notebooks:__
 - Dataset contains tweet id and emotion label
 - Tweet texts needs to be downloaded by using the tweet id. - See notebook: 01-Twitter_Extract.ipynb
 - __1339794__ records were extracted from Twitter using Tweepy.
-    -  For more details about tweepy refer to: https://tweepy.readthedocs.io/en/latest/
+    -  For more details about Tweepy refer to: https://tweepy.readthedocs.io/en/latest/
 - After noticing that not all records were saved in a csv file, decided to save all merged data into an SQLite Database. - See Notebook: 02-Merging_Data.ipynb
 
 
@@ -75,7 +75,7 @@ __jupyter notebook:__
 - 03-Data_Analysis_and_Pre-processing.ipynb
 
 
-![preprocessing](./images/preprocessing.PNG "Preprocessing Emotion Data")
+![preprocessing](./images/preprocessing.png "Preprocessing Emotion Data")
 
 
 1. Sub-setting by class: Since my interest is to work with the emotions that could show issues like depression, I decided to subset the data for the following classes:
@@ -145,7 +145,7 @@ Reference: https://machinelearningmastery.com/implement-baseline-machine-learnin
 - Cohen Kappa Score value falls under the “Moderate Agreement” level.
 - The model results are good with room for improvement.
 
-![Confussion_Matrix](./images/confussion_matrix.PNG "Confussion Matrix")
+![Confussion_Matrix](./images/confussion_matrix.PNG "Confusion Matrix")
 
 Remarks:
 24% of sadness class was predicted as anger
