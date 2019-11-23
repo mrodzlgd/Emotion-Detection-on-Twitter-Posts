@@ -148,10 +148,10 @@ Reference: https://machinelearningmastery.com/implement-baseline-machine-learnin
 ![Confussion_Matrix](./images/confussion_matrix.png "Confusion Matrix")
 
 Remarks:
-24% of sadness class was predicted as anger
-20% of fear class was predicted as joy
-18% of anger class was predicted as sadness
-13% of joy class was predicted as sadness
+- 24% of sadness class was predicted as anger
+- 20% of fear class was predicted as joy
+- 18% of anger class was predicted as sadness
+- 13% of joy class was predicted as sadness
 
 __References:__
 
