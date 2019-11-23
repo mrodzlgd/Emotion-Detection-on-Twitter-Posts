@@ -32,9 +32,12 @@ def f1_m(y_true, y_pred):
     return 2*((precision*recall)/(precision+recall+K.epsilon()))
 
 
-def assign_pred(df,label):
-  df = df.assign(pred=np.where(df[label] >.5, label, df['pred']))
-  return df
+def assign_pred(df,label,other_labels):
+    df = df.assign(pred=np.where((df[label] > df[other_labels[0]]) & 
+                                    (df[label] > df[other_labels[1]]) &
+                                    (df[label] > df[other_labels[2]]),
+                                   label,df.pred))
+    return df
 
 
 def plot_cm(cm,classes):
