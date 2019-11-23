@@ -145,7 +145,7 @@ Reference: https://machinelearningmastery.com/implement-baseline-machine-learnin
 - Cohen Kappa Score value falls under the “Moderate Agreement” level.
 - The model results are good with room for improvement.
 
-![Confussion_Matrix](./images/confussion_matrix.PNG "Confusion Matrix")
+![Confussion_Matrix](./images/confussion_matrix.png "Confusion Matrix")
 
 Remarks:
 24% of sadness class was predicted as anger
