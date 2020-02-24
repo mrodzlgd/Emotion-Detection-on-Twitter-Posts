@@ -27,52 +27,51 @@ def connect_to_twitter_OAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS
     up your developer account"""
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
-    api = tweepy.API(auth)
+    api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)    
     return api
 
 def get_tweets(api, category, label):
     """This helper function to download tweet posts based on ID
-    each request pulls 100 id's, the max amount of request is 450 every 15 minutes
-    will process 45k id's then will wait 15 mins and will continue.
+    each request pulls 100 id's.
     Inputs: category->the dataset that contains the tweet ids you want to download
             label-> the name of the emotion corresponding to those tweets which will be used to name the csv file
-    Output: a file for each emotion in the data folder
-    """    
+    Output: a file for each emotion will be saved in the data folder
+    """     
     e = list(category.id)
     data = []
     total = len(e)
     start = 0
     end = 100
-    counter = 0
+#     counter = 0
     e_batch = e[start:end]
     st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
     print(st,'- extracting ',label)
     while total>0:
         status = api.statuses_lookup(e_batch)
         count = list(range(0,len(status)))
-        d_counter1 = len(data)         
+#         d_counter1 = len(data)         
         for x in count:
             post = status[x]
             tweet = post._json
             data.append({'id': tweet['id'] , 'text': tweet['text']})
-        d_counter2 = len(data) 
-        delta = d_counter2 - d_counter1
-        counter += delta
+#         d_counter2 = len(data) 
+#         delta = d_counter2 - d_counter1
+#         counter += delta
         start += 100
         end += 100
         total -= 100
         e_batch = e[start:end]      
-        #when counter is 45k or more it will stop for 15 mins, then the counter is restarted
-        if counter >= 45000:
-            st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-            print('records so far:', len(data))
-            #wait 15 mins
-            st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-            print(st,'- waiting 15 mins for next',label,'batch...')
-            time.sleep(900)
-            counter = 0
-            st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-            print(st,'restarted counter:',counter)
+#         #when counter is 45k or more it will stop for 15 mins, then the counter is restarted
+#         if counter >= 45000:
+#             st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+#             print('records so far:', len(data))
+#             #wait 15 mins
+#             st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+#             print(st,'- waiting 15 mins for next',label,'batch...')
+#             time.sleep(900)
+#             counter = 0
+#             st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+#             print(st,'restarted counter:',counter)
     edf = pd.DataFrame(data)
     name = './data/'+label+'.csv'
     st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
